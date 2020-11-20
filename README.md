@@ -1,1 +1,3 @@
-# spam-detection-WPK-2020
+# Spam detection
+
+Spam detection using simple machine learning.
