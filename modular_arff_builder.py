@@ -10,7 +10,7 @@ from cap_features import cap_word_ratio
 
 def main():
     
-    base_path = "/Users/dirkjohannssen/Desktop/"
+    base_path = "/Users/ridva/Documents/01-NORDAKADEMIE/Semester 5/Hausarbeit/hausarbeit_WPK_KI/spam-detection-WPK-2020"
     logging.basicConfig(filename= base_path + 'log.log', level=logging.INFO)
     csv_value_index = 0
     csv_target_label_index = 1
@@ -31,7 +31,7 @@ def main():
 
     feature_functions.append(cap_word_ratio)
 
-    csv_reader = csv.reader(open(data_file_path), delimiter = data_file_delimiter)
+    csv_reader = csv.reader(open(data_file_path, encoding='utf-8'), delimiter = data_file_delimiter)
     data_lines = [line for line in csv_reader]
     
     arff_lines = list()
