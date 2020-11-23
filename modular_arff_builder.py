@@ -10,7 +10,7 @@ from cap_features import cap_word_ratio
 
 def main():
     
-    base_path = "/Users/ridva/Documents/01-NORDAKADEMIE/Semester 5/Hausarbeit/hausarbeit_WPK_KI/spam-detection-WPK-2020"
+    base_path = "/Sandboxes/spam-detection-WPK-2020"
     logging.basicConfig(filename= base_path + 'log.log', level=logging.INFO)
     csv_value_index = 0
     csv_target_label_index = 1
