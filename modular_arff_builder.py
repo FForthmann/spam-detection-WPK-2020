@@ -6,7 +6,7 @@ Created on Oct 7, 2017
 import logging
 import csv
 import time
-from cap_features import cap_word_ratio
+from cap_features import cap_word_ratio, amount_cap_words, spammy_words
 
 def main():
     
@@ -30,6 +30,8 @@ def main():
     feature_functions = []
 
     feature_functions.append(cap_word_ratio)
+    feature_functions.append(amount_cap_words)
+    feature_functions.append(spammy_words)
 
     csv_reader = csv.reader(open(data_file_path, encoding='utf-8'), delimiter = data_file_delimiter)
     data_lines = [line for line in csv_reader]

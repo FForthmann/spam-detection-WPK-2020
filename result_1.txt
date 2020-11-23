@@ -1,0 +1,83 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.LMT -I -1 -M 15 -W 0.0
+Relation:     target
+Instances:    902
+Attributes:   2
+              cap_word_ratio
+              TARGET
+Test mode:    split 80.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+Logistic model tree 
+------------------
+
+cap_word_ratio <= 0.384615
+|   cap_word_ratio <= 0.080745: LM_1:1/3 (134)
+|   cap_word_ratio > 0.080745: LM_2:1/3 (711)
+cap_word_ratio > 0.384615: LM_3:1/2 (57)
+
+Number of Leaves  : 	3
+
+Size of the Tree : 	5
+
+
+LM_1:
+Class 0 :
+-0.74 + 
+[cap_word_ratio] * 5.7 
+
+Class 1 :
+0.74 + 
+[cap_word_ratio] * -5.7
+
+LM_2:
+Class 0 :
+0.47 + 
+[cap_word_ratio] * -1.66
+
+Class 1 :
+-0.47 + 
+[cap_word_ratio] * 1.66
+
+LM_3:
+Class 0 :
+-0.38 + 
+[cap_word_ratio] * -1.13
+
+Class 1 :
+0.38 + 
+[cap_word_ratio] * 1.13
+
+
+Time taken to build model: 0.52 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.01 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         104               57.7778 %
+Incorrectly Classified Instances        76               42.2222 %
+Kappa statistic                          0.1667
+Mean absolute error                      0.4579
+Root mean squared error                  0.4798
+Relative absolute error                 91.5249 %
+Root relative squared error             95.8668 %
+Total Number of Instances              180     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,886    0,717    0,542      0,886    0,672      0,211    0,723     0,685     0
+                 0,283    0,114    0,722      0,283    0,406      0,211    0,723     0,736     1
+Weighted Avg.    0,578    0,409    0,634      0,578    0,536      0,211    0,723     0,711     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 78 10 |  a = 0
+ 66 26 |  b = 1
+
