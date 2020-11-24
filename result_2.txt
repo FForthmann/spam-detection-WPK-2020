@@ -1,0 +1,118 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.LMT -I -1 -M 15 -W 0.0
+Relation:     target
+Instances:    902
+Attributes:   3
+              cap_word_ratio
+              amount_cap_words
+              TARGET
+Test mode:    split 80.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+Logistic model tree 
+------------------
+
+amount_cap_words <= 43
+|   cap_word_ratio <= 0.071429: LM_1:6/18 (80)
+|   cap_word_ratio > 0.071429
+|   |   cap_word_ratio <= 0.390244
+|   |   |   amount_cap_words <= 7: LM_2:6/30 (62)
+|   |   |   amount_cap_words > 7: LM_3:6/30 (422)
+|   |   cap_word_ratio > 0.390244: LM_4:6/24 (31)
+amount_cap_words > 43: LM_5:6/12 (307)
+
+Number of Leaves  : 	5
+
+Size of the Tree : 	9
+
+
+LM_1:
+Class 0 :
+-0.73 + 
+[cap_word_ratio] * 7.82 +
+[amount_cap_words] * -0.01
+
+Class 1 :
+0.73 + 
+[cap_word_ratio] * -7.82 +
+[amount_cap_words] * 0.01
+
+
+
+LM_2:
+Class 0 :
+0.19 + 
+[cap_word_ratio] * -3.82 +
+[amount_cap_words] * 0.1 
+
+Class 1 :
+-0.19 + 
+[cap_word_ratio] * 3.82 +
+[amount_cap_words] * -0.1
+
+LM_3:
+Class 0 :
+0.37 + 
+[cap_word_ratio] * 0.45 +
+[amount_cap_words] * 0   
+
+Class 1 :
+-0.37 + 
+[cap_word_ratio] * -0.45 +
+[amount_cap_words] * -0
+
+LM_4:
+Class 0 :
+-0.53 + 
+[cap_word_ratio] * -0.51 +
+[amount_cap_words] * -0.02
+
+Class 1 :
+0.53 + 
+[cap_word_ratio] * 0.51 +
+[amount_cap_words] * 0.02
+
+LM_5:
+Class 0 :
+0.05 + 
+[cap_word_ratio] * -2.13 +
+[amount_cap_words] * 0   
+
+Class 1 :
+-0.05 + 
+[cap_word_ratio] * 2.13 +
+[amount_cap_words] * -0
+
+
+Time taken to build model: 0.37 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.01 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         117               65      %
+Incorrectly Classified Instances        63               35      %
+Kappa statistic                          0.3005
+Mean absolute error                      0.4266
+Root mean squared error                  0.482 
+Relative absolute error                 85.2699 %
+Root relative squared error             96.3043 %
+Total Number of Instances              180     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,670    0,370    0,634      0,670    0,652      0,301    0,653     0,565     0
+                 0,630    0,330    0,667      0,630    0,648      0,301    0,653     0,710     1
+Weighted Avg.    0,650    0,349    0,651      0,650    0,650      0,301    0,653     0,640     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 59 29 |  a = 0
+ 34 58 |  b = 1
+

@@ -6,7 +6,7 @@ Created on Oct 7, 2017
 import logging
 import csv
 import time
-from cap_features import cap_word_ratio
+from cap_features import cap_word_ratio, amount_cap_words, spammy_words
 
 def main():
     
@@ -15,10 +15,8 @@ def main():
     csv_value_index = 0
     csv_target_label_index = 1
     
-    #data_file_path = "hatespeech_task_train.csv"
     data_file_path = "spam_task_train.csv"
-    #data_file_path = "sentiment_task_train.csv"
-    
+
     features_csv_path = base_path + "features.csv"
     data_file_delimiter = "\t"
     omtArffName = "omt.arff"
@@ -30,6 +28,8 @@ def main():
     feature_functions = []
 
     feature_functions.append(cap_word_ratio)
+    feature_functions.append(amount_cap_words)
+    feature_functions.append(spammy_words)
 
     csv_reader = csv.reader(open(data_file_path, encoding='utf-8'), delimiter = data_file_delimiter)
     data_lines = [line for line in csv_reader]

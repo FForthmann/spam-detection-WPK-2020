@@ -24,3 +24,16 @@ def cap_word_ratio(inputtext):
 	
 	return_dict = {'values' : [total_cap_words/amount_words], 'heads' : ['@Attribute cap_word_ratio REAL']}
 	return return_dict
+
+def spammy_words(inputtext):
+
+	spam_words = ['helvetica', 'new', 'money', 'e-mail', 'recieve', 'business']
+	splittext = inputtext.split(" ")
+	total = 0
+	for word in spam_words:
+		total += splittext.count(word)
+		
+	total_spammy_words = float(total)
+	
+	return_dict = {'values' : [total], 'heads' : ['@Attribute spammy_words REAL']}
+	return return_dict
