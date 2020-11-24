@@ -1,0 +1,411 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.LMT -I -1 -M 15 -W 0.0
+Relation:     target
+Instances:    902
+Attributes:   6
+              cap_word_ratio
+              amount_cap_words
+              spammy_words
+              html_tag_counts
+              not_spammy_words
+              TARGET
+Test mode:    split 80.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+Logistic model tree 
+------------------
+
+html_tag_counts <= 145
+|   cap_word_ratio <= 0.384615
+|   |   html_tag_counts <= 0
+|   |   |   spammy_words <= 2
+|   |   |   |   not_spammy_words <= 0
+|   |   |   |   |   amount_cap_words <= 3: LM_1:39/273 (29)
+|   |   |   |   |   amount_cap_words > 3
+|   |   |   |   |   |   amount_cap_words <= 38
+|   |   |   |   |   |   |   cap_word_ratio <= 0.295082
+|   |   |   |   |   |   |   |   cap_word_ratio <= 0.102894
+|   |   |   |   |   |   |   |   |   amount_cap_words <= 15: LM_2:39/429 (21)
+|   |   |   |   |   |   |   |   |   amount_cap_words > 15: LM_3:36/426 (6)
+|   |   |   |   |   |   |   |   cap_word_ratio > 0.102894: LM_4:39/390 (51)
+|   |   |   |   |   |   |   cap_word_ratio > 0.295082: LM_5:39/351 (8)
+|   |   |   |   |   |   amount_cap_words > 38: LM_6:39/312 (13)
+|   |   |   |   not_spammy_words > 0
+|   |   |   |   |   spammy_words <= 0: LM_7:39/273 (10)
+|   |   |   |   |   spammy_words > 0: LM_8:39/273 (25)
+|   |   |   spammy_words > 2
+|   |   |   |   not_spammy_words <= 0: LM_9:39/234 (30)
+|   |   |   |   not_spammy_words > 0: LM_10:39/234 (104)
+|   |   html_tag_counts > 0
+|   |   |   amount_cap_words <= 7: LM_11:39/195 (26)
+|   |   |   amount_cap_words > 7
+|   |   |   |   html_tag_counts <= 61
+|   |   |   |   |   amount_cap_words <= 44
+|   |   |   |   |   |   spammy_words <= 4: LM_12:39/312 (234)
+|   |   |   |   |   |   spammy_words > 4: LM_13:39/312 (41)
+|   |   |   |   |   amount_cap_words > 44
+|   |   |   |   |   |   cap_word_ratio <= 0.17316: LM_14:39/312 (49)
+|   |   |   |   |   |   cap_word_ratio > 0.17316: LM_15:39/312 (45)
+|   |   |   |   html_tag_counts > 61: LM_16:39/234 (39)
+|   cap_word_ratio > 0.384615: LM_17:39/117 (55)
+html_tag_counts > 145: LM_18:39/78 (116)
+
+Number of Leaves  : 	18
+
+Size of the Tree : 	35
+
+
+
+
+
+
+LM_1:
+Class 0 :
+0.28 + 
+[cap_word_ratio] * -3.63 +
+[amount_cap_words] * 0.03 +
+[spammy_words] * -9.08 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -0.24
+
+Class 1 :
+-0.28 + 
+[cap_word_ratio] * 3.63 +
+[amount_cap_words] * -0.03 +
+[spammy_words] * 9.08 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 0.24
+
+
+
+
+
+LM_2:
+Class 0 :
+-0.25 + 
+[cap_word_ratio] * 39.84 +
+[amount_cap_words] * -0.29 +
+[spammy_words] * -0.59 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -0.24
+
+Class 1 :
+0.25 + 
+[cap_word_ratio] * -39.84 +
+[amount_cap_words] * 0.29 +
+[spammy_words] * 0.59 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 0.24
+
+LM_3:
+Class 0 :
+17.31 + 
+[cap_word_ratio] * 12.66 +
+[amount_cap_words] * 0.09 +
+[spammy_words] * -0.73 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -0.24
+
+Class 1 :
+-17.31 + 
+[cap_word_ratio] * -12.66 +
+[amount_cap_words] * -0.09 +
+[spammy_words] * 0.73 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 0.24
+
+LM_4:
+Class 0 :
+0.65 + 
+[cap_word_ratio] * 1.71 +
+[amount_cap_words] * -0.01 +
+[spammy_words] * 11.86 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -0.24
+
+Class 1 :
+-0.65 + 
+[cap_word_ratio] * -1.71 +
+[amount_cap_words] * 0.01 +
+[spammy_words] * -11.86 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 0.24
+
+LM_5:
+Class 0 :
+6.68 + 
+[cap_word_ratio] * -26.29 +
+[amount_cap_words] * 0.09 +
+[spammy_words] * -0.31 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -0.24
+
+Class 1 :
+-6.68 + 
+[cap_word_ratio] * 26.29 +
+[amount_cap_words] * -0.09 +
+[spammy_words] * 0.31 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 0.24
+
+LM_6:
+Class 0 :
+-8.9 + 
+[cap_word_ratio] * 24.33 +
+[amount_cap_words] * 0.05 +
+[spammy_words] * 0.04 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -0.24
+
+Class 1 :
+8.9  + 
+[cap_word_ratio] * -24.33 +
+[amount_cap_words] * -0.05 +
+[spammy_words] * -0.04 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 0.24
+
+
+LM_7:
+Class 0 :
+14.08 + 
+[cap_word_ratio] * 7.74 +
+[amount_cap_words] * 0.05 +
+[spammy_words] * 0.41 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -16.39
+
+Class 1 :
+-14.08 + 
+[cap_word_ratio] * -7.74 +
+[amount_cap_words] * -0.05 +
+[spammy_words] * -0.41 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 16.39
+
+LM_8:
+Class 0 :
+13.15 + 
+[cap_word_ratio] * -3.81 +
+[amount_cap_words] * 0.02 +
+[spammy_words] * -0.53 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -11.89
+
+Class 1 :
+-13.15 + 
+[cap_word_ratio] * 3.81 +
+[amount_cap_words] * -0.02 +
+[spammy_words] * 0.53 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 11.89
+
+
+LM_9:
+Class 0 :
+0.89 + 
+[cap_word_ratio] * -6.19 +
+[amount_cap_words] * -0 +
+[spammy_words] * -0.02 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -0.12
+
+Class 1 :
+-0.89 + 
+[cap_word_ratio] * 6.19 +
+[amount_cap_words] * 0    +
+[spammy_words] * 0.02 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 0.12
+
+LM_10:
+Class 0 :
+-0.44 + 
+[cap_word_ratio] * -1.32 +
+[amount_cap_words] * 0    +
+[spammy_words] * -0.01 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -0.07
+
+Class 1 :
+0.44 + 
+[cap_word_ratio] * 1.32 +
+[amount_cap_words] * -0 +
+[spammy_words] * 0.01 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 0.07
+
+
+LM_11:
+Class 0 :
+-7.01 + 
+[cap_word_ratio] * 0.34 +
+[amount_cap_words] * 2.89 +
+[spammy_words] * -0.11 +
+[html_tag_counts] * -0.72 +
+[not_spammy_words] * 0.2 
+
+Class 1 :
+7.01 + 
+[cap_word_ratio] * -0.34 +
+[amount_cap_words] * -2.89 +
+[spammy_words] * 0.11 +
+[html_tag_counts] * 0.72 +
+[not_spammy_words] * -0.2
+
+
+
+
+LM_12:
+Class 0 :
+2.66 + 
+[cap_word_ratio] * -4.34 +
+[amount_cap_words] * 0    +
+[spammy_words] * -0.18 +
+[html_tag_counts] * -0.03 +
+[not_spammy_words] * 0.51
+
+Class 1 :
+-2.66 + 
+[cap_word_ratio] * 4.34 +
+[amount_cap_words] * -0 +
+[spammy_words] * 0.18 +
+[html_tag_counts] * 0.03 +
+[not_spammy_words] * -0.51
+
+LM_13:
+Class 0 :
+1.91 + 
+[cap_word_ratio] * -23.52 +
+[amount_cap_words] * 0.14 +
+[spammy_words] * -0.43 +
+[html_tag_counts] * -0.01 +
+[not_spammy_words] * 0.76
+
+Class 1 :
+-1.91 + 
+[cap_word_ratio] * 23.52 +
+[amount_cap_words] * -0.14 +
+[spammy_words] * 0.43 +
+[html_tag_counts] * 0.01 +
+[not_spammy_words] * -0.76
+
+
+LM_14:
+Class 0 :
+2.89 + 
+[cap_word_ratio] * -22.45 +
+[amount_cap_words] * 0.04 +
+[spammy_words] * -0.24 +
+[html_tag_counts] * 0.01 +
+[not_spammy_words] * 0.16
+
+Class 1 :
+-2.89 + 
+[cap_word_ratio] * 22.45 +
+[amount_cap_words] * -0.04 +
+[spammy_words] * 0.24 +
+[html_tag_counts] * -0.01 +
+[not_spammy_words] * -0.16
+
+LM_15:
+Class 0 :
+4.18 + 
+[cap_word_ratio] * -13.34 +
+[amount_cap_words] * -0 +
+[spammy_words] * -0.41 +
+[html_tag_counts] * 0.04 +
+[not_spammy_words] * 0.29
+
+Class 1 :
+-4.18 + 
+[cap_word_ratio] * 13.34 +
+[amount_cap_words] * 0    +
+[spammy_words] * 0.41 +
+[html_tag_counts] * -0.04 +
+[not_spammy_words] * -0.29
+
+LM_16:
+Class 0 :
+-35.34 + 
+[cap_word_ratio] * -124.51 +
+[amount_cap_words] * 1.09 +
+[spammy_words] * -0.75 +
+[html_tag_counts] * -0.03 +
+[not_spammy_words] * 0.24
+
+Class 1 :
+35.34 + 
+[cap_word_ratio] * 124.51 +
+[amount_cap_words] * -1.09 +
+[spammy_words] * 0.75 +
+[html_tag_counts] * 0.03 +
+[not_spammy_words] * -0.24
+
+LM_17:
+Class 0 :
+1.35 + 
+[cap_word_ratio] * -4.76 +
+[amount_cap_words] * 0    +
+[spammy_words] * -0.39 +
+[html_tag_counts] * -0 +
+[not_spammy_words] * -6.89
+
+Class 1 :
+-1.35 + 
+[cap_word_ratio] * 4.76 +
+[amount_cap_words] * -0 +
+[spammy_words] * 0.39 +
+[html_tag_counts] * 0    +
+[not_spammy_words] * 6.89
+
+LM_18:
+Class 0 :
+0.53 + 
+[cap_word_ratio] * -3.07 +
+[amount_cap_words] * 0.01 +
+[spammy_words] * 0.04 +
+[html_tag_counts] * -0.01 +
+[not_spammy_words] * -0.22
+
+Class 1 :
+-0.53 + 
+[cap_word_ratio] * 3.07 +
+[amount_cap_words] * -0.01 +
+[spammy_words] * -0.04 +
+[html_tag_counts] * 0.01 +
+[not_spammy_words] * 0.22
+
+
+Time taken to build model: 0.76 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.01 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         153               85      %
+Incorrectly Classified Instances        27               15      %
+Kappa statistic                          0.6998
+Mean absolute error                      0.1719
+Root mean squared error                  0.3597
+Relative absolute error                 34.3673 %
+Root relative squared error             71.8772 %
+Total Number of Instances              180     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,841    0,141    0,851      0,841    0,846      0,700    0,890     0,858     0
+                 0,859    0,159    0,849      0,859    0,854      0,700    0,890     0,880     1
+Weighted Avg.    0,850    0,150    0,850      0,850    0,850      0,700    0,890     0,869     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 74 14 |  a = 0
+ 13 79 |  b = 1
+
