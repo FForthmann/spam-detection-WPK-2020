@@ -1,4 +1,5 @@
 import csv
+
 import numpy as np
 
 
@@ -48,3 +49,24 @@ def spammy_words(inputtext):
 
     return_dict = {'values': [total], 'heads': ['@Attribute spammy_words REAL']}
     return return_dict
+   
+def html_tag_count(inputtext):
+	splittext = inputtext.split(" ")
+	tagcount = 0
+	for word in splittext:
+		if (len(word) > 0):
+			for char in word:
+				if (char=='<' or char=='>'):
+					tagcount += 1					
+	return_dict = {'values': [tagcount], 'heads': ['@Attribute html_tag_counts REAL']}
+	return return_dict
+
+def not_spammy_words(emailtext):
+	spam_words = ['email', 'people', 'time', 'please']
+	splittext = emailtext.split(" ")
+	total = 0
+	for word in spam_words:
+		total += splittext.count(word)
+
+	return_dict = {'values': [total], 'heads': ['@Attribute not_spammy_words REAL']}
+	return return_dict
