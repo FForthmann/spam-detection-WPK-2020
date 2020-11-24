@@ -26,6 +26,7 @@ def cap_word_ratio(inputtext):
 	return return_dict
 
 def spammy_words(inputtext):
+
 	spam_words = ['helvetica', 'new', 'money', 'e-mail', 'recieve', 'business']
 	splittext = inputtext.split(" ")
 	total = 0
