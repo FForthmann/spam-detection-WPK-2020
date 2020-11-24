@@ -1,3 +1,5 @@
+import csv
+
 def amount_cap_words(inputtext):
 	splittext = inputtext.split(" ")
 	total = 0
@@ -26,8 +28,10 @@ def cap_word_ratio(inputtext):
 	return return_dict
 
 def spammy_words(inputtext):
+	with open('spammy_words_list.csv', newline='') as f:
+		reader = csv.reader(f)
+		spam_words = list(reader)
 
-	spam_words = ['helvetica', 'new', 'money', 'e-mail', 'recieve', 'business']
 	splittext = inputtext.split(" ")
 	total = 0
 	for word in spam_words:
