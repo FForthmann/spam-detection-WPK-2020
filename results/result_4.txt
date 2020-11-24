@@ -1,0 +1,208 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.LMT -I -1 -M 15 -W 0.0
+Relation:     target
+Instances:    902
+Attributes:   4
+              cap_word_ratio
+              amount_cap_words
+              spammy_words
+              TARGET
+Test mode:    split 80.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+Logistic model tree
+------------------
+
+spammy_words <= 4
+|   cap_word_ratio <= 0.384615
+|   |   cap_word_ratio <= 0.058252: LM_1:54/216 (39)
+|   |   cap_word_ratio > 0.058252
+|   |   |   amount_cap_words <= 3: LM_2:54/270 (25)
+|   |   |   amount_cap_words > 3
+|   |   |   |   amount_cap_words <= 39: LM_3:54/324 (387)
+|   |   |   |   amount_cap_words > 39
+|   |   |   |   |   cap_word_ratio <= 0.238095: LM_4:54/378 (64)
+|   |   |   |   |   cap_word_ratio > 0.238095: LM_5:54/378 (38)
+|   cap_word_ratio > 0.384615: LM_6:54/162 (53)
+spammy_words > 4
+|   cap_word_ratio <= 0.173684
+|   |   cap_word_ratio <= 0.087719: LM_7:54/216 (67)
+|   |   cap_word_ratio > 0.087719
+|   |   |   amount_cap_words <= 100: LM_8:54/270 (113)
+|   |   |   amount_cap_words > 100: LM_9:54/270 (34)
+|   cap_word_ratio > 0.173684: LM_10:54/162 (82)
+
+Number of Leaves  : 	10
+
+Size of the Tree : 	19
+
+
+
+LM_1:
+Class 0 :
+-0.51 +
+[cap_word_ratio] * 7.08 +
+[amount_cap_words] * -0.05 +
+[spammy_words] * -0.03
+
+Class 1 :
+0.51 +
+[cap_word_ratio] * -7.08 +
+[amount_cap_words] * 0.05 +
+[spammy_words] * 0.03
+
+
+LM_2:
+Class 0 :
+0.42 +
+[cap_word_ratio] * -8.32 +
+[amount_cap_words] * 0.33 +
+[spammy_words] * -11.34
+
+Class 1 :
+-0.42 +
+[cap_word_ratio] * 8.32 +
+[amount_cap_words] * -0.33 +
+[spammy_words] * 11.34
+
+
+LM_3:
+Class 0 :
+0.48 +
+[cap_word_ratio] * -1.01 +
+[amount_cap_words] * 0.02 +
+[spammy_words] * -0.06
+
+Class 1 :
+-0.48 +
+[cap_word_ratio] * 1.01 +
+[amount_cap_words] * -0.02 +
+[spammy_words] * 0.06
+
+
+LM_4:
+Class 0 :
+-0.9 +
+[cap_word_ratio] * 2.77 +
+[amount_cap_words] * -0 +
+[spammy_words] * 0.42
+
+Class 1 :
+0.9  +
+[cap_word_ratio] * -2.77 +
+[amount_cap_words] * 0    +
+[spammy_words] * -0.42
+
+LM_5:
+Class 0 :
+-1.73 +
+[cap_word_ratio] * 6.9  +
+[amount_cap_words] * -0.01 +
+[spammy_words] * -0.19
+
+Class 1 :
+1.73 +
+[cap_word_ratio] * -6.9 +
+[amount_cap_words] * 0.01 +
+[spammy_words] * 0.19
+
+LM_6:
+Class 0 :
+1.27 +
+[cap_word_ratio] * -4.71 +
+[amount_cap_words] * 0    +
+[spammy_words] * -0.7
+
+Class 1 :
+-1.27 +
+[cap_word_ratio] * 4.71 +
+[amount_cap_words] * -0 +
+[spammy_words] * 0.7
+
+
+
+LM_7:
+Class 0 :
+-0.61 +
+[cap_word_ratio] * -1.97 +
+[amount_cap_words] * -0.01 +
+[spammy_words] * 0.02
+
+Class 1 :
+0.61 +
+[cap_word_ratio] * 1.97 +
+[amount_cap_words] * 0.01 +
+[spammy_words] * -0.02
+
+
+LM_8:
+Class 0 :
+0.8  +
+[cap_word_ratio] * -3.88 +
+[amount_cap_words] * -0 +
+[spammy_words] * -0.04
+
+Class 1 :
+-0.8 +
+[cap_word_ratio] * 3.88 +
+[amount_cap_words] * 0    +
+[spammy_words] * 0.04
+
+LM_9:
+Class 0 :
+2.9  +
+[cap_word_ratio] * -15.91 +
+[amount_cap_words] * 0.01 +
+[spammy_words] * -0.05
+
+Class 1 :
+-2.9 +
+[cap_word_ratio] * 15.91 +
+[amount_cap_words] * -0.01 +
+[spammy_words] * 0.05
+
+LM_10:
+Class 0 :
+-0.22 +
+[cap_word_ratio] * -2.19 +
+[amount_cap_words] * 0    +
+[spammy_words] * -0.04
+
+Class 1 :
+0.22 +
+[cap_word_ratio] * 2.19 +
+[amount_cap_words] * -0 +
+[spammy_words] * 0.04
+
+
+Time taken to build model: 0.38 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         129               71.6667 %
+Incorrectly Classified Instances        51               28.3333 %
+Kappa statistic                          0.4357
+Mean absolute error                      0.3596
+Root mean squared error                  0.4503
+Relative absolute error                 71.8784 %
+Root relative squared error             89.9749 %
+Total Number of Instances              180
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,818    0,380    0,673      0,818    0,738      0,446    0,735     0,642     0
+                 0,620    0,182    0,781      0,620    0,691      0,446    0,735     0,766     1
+Weighted Avg.    0,717    0,279    0,728      0,717    0,714      0,446    0,735     0,705
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 72 16 |  a = 0
+ 35 57 |  b = 1
