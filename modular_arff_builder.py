@@ -15,10 +15,8 @@ def main():
     csv_value_index = 0
     csv_target_label_index = 1
     
-    #data_file_path = "hatespeech_task_train.csv"
     data_file_path = "spam_task_train.csv"
-    #data_file_path = "sentiment_task_train.csv"
-    
+
     features_csv_path = base_path + "features.csv"
     data_file_delimiter = "\t"
     omtArffName = "omt.arff"
