@@ -1,0 +1,279 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.LMT -I -1 -M 15 -W 0.0
+Relation:     target-weka.filters.unsupervised.attribute.Remove-R3,6,11-12
+Instances:    902
+Attributes:   10
+              cap_word_ratio
+              amount_cap_words
+              html_tag_counts
+              begin_with_re
+              has_exclamation_mark
+              square_bracket_tag_counts
+              has_html
+              num_link
+              grossbuchstaben
+              TARGET
+Test mode:    split 80.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+Logistic model tree 
+------------------
+
+begin_with_re <= 0
+|   has_exclamation_mark <= 3: LM_1:112/336 (330)
+|   has_exclamation_mark > 3: LM_2:112/336 (40)
+begin_with_re > 0
+|   html_tag_counts <= 22
+|   |   has_exclamation_mark <= 3
+|   |   |   cap_word_ratio <= 0.344444
+|   |   |   |   html_tag_counts <= 1
+|   |   |   |   |   grossbuchstaben <= 114: LM_3:112/784 (142)
+|   |   |   |   |   grossbuchstaben > 114: LM_4:112/784 (61)
+|   |   |   |   html_tag_counts > 1: LM_5:112/672 (70)
+|   |   |   cap_word_ratio > 0.344444: LM_6:112/560 (39)
+|   |   has_exclamation_mark > 3: LM_7:112/448 (67)
+|   html_tag_counts > 22: LM_8:112/336 (153)
+
+Number of Leaves  : 	8
+
+Size of the Tree : 	15
+
+
+LM_1:
+Class 0 :
+1.96 + 
+[cap_word_ratio] * -2.05 +
+[amount_cap_words] * 0.12 +
+[html_tag_counts] * 0.02 +
+[begin_with_re] * -1.56 +
+[has_exclamation_mark] * -0.46 +
+[square_bracket_tag_counts] * 6.61 +
+[has_html] * -1.15 +
+[num_link] * 0.27 +
+[grossbuchstaben] * -0.06
+
+Class 1 :
+-1.96 + 
+[cap_word_ratio] * 2.05 +
+[amount_cap_words] * -0.12 +
+[html_tag_counts] * -0.02 +
+[begin_with_re] * 1.56 +
+[has_exclamation_mark] * 0.46 +
+[square_bracket_tag_counts] * -6.61 +
+[has_html] * 1.15 +
+[num_link] * -0.27 +
+[grossbuchstaben] * 0.06
+
+LM_2:
+Class 0 :
+27.4 + 
+[cap_word_ratio] * -37.56 +
+[amount_cap_words] * 0.03 +
+[html_tag_counts] * -0.12 +
+[begin_with_re] * -1.56 +
+[has_exclamation_mark] * -3.03 +
+[square_bracket_tag_counts] * 3.7  +
+[has_html] * -4.34 +
+[num_link] * -0.29 +
+[grossbuchstaben] * -0.06
+
+Class 1 :
+-27.4 + 
+[cap_word_ratio] * 37.56 +
+[amount_cap_words] * -0.03 +
+[html_tag_counts] * 0.12 +
+[begin_with_re] * 1.56 +
+[has_exclamation_mark] * 3.03 +
+[square_bracket_tag_counts] * -3.7 +
+[has_html] * 4.34 +
+[num_link] * 0.29 +
+[grossbuchstaben] * 0.06
+
+
+
+
+
+
+LM_3:
+Class 0 :
+1.56 + 
+[cap_word_ratio] * 4.63 +
+[amount_cap_words] * 0.05 +
+[html_tag_counts] * -0.65 +
+[begin_with_re] * -1.56 +
+[has_exclamation_mark] * -0.36 +
+[square_bracket_tag_counts] * 0.29 +
+[has_html] * 0.74 +
+[num_link] * -0.23 +
+[grossbuchstaben] * -0.03
+
+Class 1 :
+-1.56 + 
+[cap_word_ratio] * -4.63 +
+[amount_cap_words] * -0.05 +
+[html_tag_counts] * 0.65 +
+[begin_with_re] * 1.56 +
+[has_exclamation_mark] * 0.36 +
+[square_bracket_tag_counts] * -0.29 +
+[has_html] * -0.74 +
+[num_link] * 0.23 +
+[grossbuchstaben] * 0.03
+
+LM_4:
+Class 0 :
+2.09 + 
+[cap_word_ratio] * -13.22 +
+[amount_cap_words] * 0.03 +
+[html_tag_counts] * -0.34 +
+[begin_with_re] * -1.56 +
+[has_exclamation_mark] * -0.22 +
+[square_bracket_tag_counts] * 0.14 +
+[has_html] * 3.35 +
+[num_link] * 0.09 +
+[grossbuchstaben] * -0.02
+
+Class 1 :
+-2.09 + 
+[cap_word_ratio] * 13.22 +
+[amount_cap_words] * -0.03 +
+[html_tag_counts] * 0.34 +
+[begin_with_re] * 1.56 +
+[has_exclamation_mark] * 0.22 +
+[square_bracket_tag_counts] * -0.14 +
+[has_html] * -3.35 +
+[num_link] * -0.09 +
+[grossbuchstaben] * 0.02
+
+LM_5:
+Class 0 :
+5.01 + 
+[cap_word_ratio] * -5.98 +
+[amount_cap_words] * 0.04 +
+[html_tag_counts] * -0.07 +
+[begin_with_re] * -1.56 +
+[has_exclamation_mark] * 0.56 +
+[square_bracket_tag_counts] * 0.81 +
+[has_html] * 1.09 +
+[num_link] * -1.14 +
+[grossbuchstaben] * -0.02
+
+Class 1 :
+-5.01 + 
+[cap_word_ratio] * 5.98 +
+[amount_cap_words] * -0.04 +
+[html_tag_counts] * 0.07 +
+[begin_with_re] * 1.56 +
+[has_exclamation_mark] * -0.56 +
+[square_bracket_tag_counts] * -0.81 +
+[has_html] * -1.09 +
+[num_link] * 1.14 +
+[grossbuchstaben] * 0.02
+
+LM_6:
+Class 0 :
+-15.77 + 
+[cap_word_ratio] * -1.84 +
+[amount_cap_words] * 0.03 +
+[html_tag_counts] * 2.23 +
+[begin_with_re] * -1.56 +
+[has_exclamation_mark] * -0.21 +
+[square_bracket_tag_counts] * 10.29 +
+[has_html] * 11.17 +
+[num_link] * -1.16 +
+[grossbuchstaben] * -0.15
+
+Class 1 :
+15.77 + 
+[cap_word_ratio] * 1.84 +
+[amount_cap_words] * -0.03 +
+[html_tag_counts] * -2.23 +
+[begin_with_re] * 1.56 +
+[has_exclamation_mark] * 0.21 +
+[square_bracket_tag_counts] * -10.29 +
+[has_html] * -11.17 +
+[num_link] * 1.16 +
+[grossbuchstaben] * 0.15
+
+LM_7:
+Class 0 :
+1.65 + 
+[cap_word_ratio] * -17.96 +
+[amount_cap_words] * 0.01 +
+[html_tag_counts] * 0.27 +
+[begin_with_re] * -1.56 +
+[has_exclamation_mark] * -0.96 +
+[square_bracket_tag_counts] * 1.86 +
+[has_html] * -1.78 +
+[num_link] * 1.61 +
+[grossbuchstaben] * -0.02
+
+Class 1 :
+-1.65 + 
+[cap_word_ratio] * 17.96 +
+[amount_cap_words] * -0.01 +
+[html_tag_counts] * -0.27 +
+[begin_with_re] * 1.56 +
+[has_exclamation_mark] * 0.96 +
+[square_bracket_tag_counts] * -1.86 +
+[has_html] * 1.78 +
+[num_link] * -1.61 +
+[grossbuchstaben] * 0.02
+
+LM_8:
+Class 0 :
+1.88 + 
+[cap_word_ratio] * 1.12 +
+[amount_cap_words] * 0.06 +
+[html_tag_counts] * -0.01 +
+[begin_with_re] * -1.56 +
+[has_exclamation_mark] * -0.76 +
+[square_bracket_tag_counts] * 0.48 +
+[has_html] * -3.05 +
+[num_link] * -0.13 +
+[grossbuchstaben] * -0.01
+
+Class 1 :
+-1.88 + 
+[cap_word_ratio] * -1.12 +
+[amount_cap_words] * -0.06 +
+[html_tag_counts] * 0.01 +
+[begin_with_re] * 1.56 +
+[has_exclamation_mark] * 0.76 +
+[square_bracket_tag_counts] * -0.48 +
+[has_html] * 3.05 +
+[num_link] * 0.13 +
+[grossbuchstaben] * 0.01
+
+
+Time taken to build model: 0.73 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         164               91.1111 %
+Incorrectly Classified Instances        16                8.8889 %
+Kappa statistic                          0.822 
+Mean absolute error                      0.11  
+Root mean squared error                  0.2868
+Relative absolute error                 21.9955 %
+Root relative squared error             57.2954 %
+Total Number of Instances              180     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,898    0,076    0,919      0,898    0,908      0,822    0,954     0,939     0
+                 0,924    0,102    0,904      0,924    0,914      0,822    0,953     0,954     1
+Weighted Avg.    0,911    0,089    0,911      0,911    0,911      0,822    0,953     0,947     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 79  9 |  a = 0
+  7 85 |  b = 1
+
