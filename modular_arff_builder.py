@@ -1,8 +1,3 @@
-'''
-Created on Oct 7, 2017
-
-@author: dij
-'''
 import logging
 import csv
 import time
