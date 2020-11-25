@@ -7,7 +7,8 @@ import logging
 import csv
 import time
 from cap_features import cap_word_ratio, amount_cap_words, spammy_words, html_tag_count, not_spammy_words, numwords, \
-    begin_with_re, spammy_phrases, has_exclamation_mark, square_bracket_count, has_html, num_link, has_gifs, has_jpg, grossbuchstaben
+    begin_with_re, spammy_phrases, has_exclamation_mark, square_bracket_count, has_html, num_link, has_gifs, has_jpg, \
+    grossbuchstaben
 
 
 def main():
@@ -32,7 +33,7 @@ def main():
     feature_functions.append(amount_cap_words)
     feature_functions.append(spammy_words)
     feature_functions.append(html_tag_count)
-    #feature_functions.append(not_spammy_words)
+    # feature_functions.append(not_spammy_words)
     # feature_functions.append(numwords)
     feature_functions.append(begin_with_re)
     feature_functions.append(spammy_phrases)
@@ -43,7 +44,6 @@ def main():
     feature_functions.append(has_gifs)
     feature_functions.append(has_jpg)
     feature_functions.append(grossbuchstaben)
-    
 
     csv_reader = csv.reader(open(data_file_path, encoding='utf-8'), delimiter=data_file_delimiter)
     data_lines = [line for line in csv_reader]

@@ -1,7 +1,6 @@
 import csv
 
 import numpy as np
-from pip._vendor.packaging.tags import Tag
 
 
 def amount_cap_words(inputtext):
@@ -40,7 +39,8 @@ def spammy_words(inputtext):
 
     spam_words = np.array(spam_words)
     spam_words = spam_words.flatten()
-	
+
+    inputtext = inputtext.lower()
     splittext = inputtext.split(" ")
     total = 0
     for word in spam_words:
@@ -59,12 +59,13 @@ def spammy_phrases(inputtext):
 
     spam_words = np.array(spam_words)
     spam_words = spam_words.flatten()
+    inputtext = inputtext.lower()
 
     total = 0
     for word in spam_words:
-        word2 = word.lower()
+        word = word.lower()
 
-        if (word2 in inputtext):
+        if (word in inputtext):
             total += 1
 
     total_spammy_words = total
@@ -155,15 +156,15 @@ def has_jpg(emailtext):
     solution = 1 if ".jpg" in emailtext.lower() else 0
     return_dict = {'values': [solution], 'heads': ['@Attribute has_jpgs REAL']}
     return return_dict
-   
+
+
 def grossbuchstaben(inputtext):
-	splittext = inputtext.split(" ")
-	tagcount = 0	
-	for word in splittext:
-		if (len(word) > 0):
-			for char in word:
-				if (char.isupper()):
-					tagcount += 1
-	print(tagcount)
-	return_dict = {'values': [tagcount], 'heads': ['@Attribute grossbuchstaben REAL']}
-	return return_dict
+    splittext = inputtext.split(" ")
+    tagcount = 0
+    for word in splittext:
+        if (len(word) > 0):
+            for char in word:
+                if (char.isupper()):
+                    tagcount += 1
+    return_dict = {'values': [tagcount], 'heads': ['@Attribute grossbuchstaben REAL']}
+    return return_dict
