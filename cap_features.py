@@ -36,7 +36,7 @@ def cap_word_ratio(inputtext):
 
 
 def spammy_words(inputtext):
-    with open('spammy_words_list.csv', newline='') as f:
+    with open('spammy_words_list_general.csv', newline='') as f:
         reader = csv.reader(f)
         spam_words = list(reader)
 
@@ -62,7 +62,6 @@ def html_tag_count(inputtext):
             for char in word:
                 if (char == '<' or char == '>'):
                     tagcount += 1
-    # print(tagcount)
     return_dict = {'values': [tagcount], 'heads': ['@Attribute html_tag_counts REAL']}
     return return_dict
 
@@ -75,7 +74,6 @@ def not_spammy_words(emailtext):
         total += splittext.count(word)
 
     return_dict = {'values': [total], 'heads': ['@Attribute not_spammy_words REAL']}
-    # print(total)
     return return_dict
 
 
@@ -84,18 +82,10 @@ def numwords(emailtext):
     return_dict = {'values': [len(splittext)], 'heads': ['@Attribute numwords REAL']}
     return return_dict
 
-
-def ausgabe(emailtext):
-    splittext = emailtext.split(" ")
-    print(splittext)
-    return_dict = {'values': [len(splittext)], 'heads': ['@Attribute ausgabe REAL']}
-    return return_dict
-
-
 def begin_with_re(emailtext):
     splittext = emailtext.split(" ")
-    total = False
+    total = 1
     if ("re" in splittext[0].lower()):
-        total = True
+     	total = 0
     return_dict = {'values': [total], 'heads': ['@Attribute begin_with_re REAL']}
     return return_dict

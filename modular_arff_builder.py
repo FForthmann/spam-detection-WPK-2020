@@ -6,7 +6,7 @@ Created on Oct 7, 2017
 import logging
 import csv
 import time
-from cap_features import cap_word_ratio, amount_cap_words, spammy_words, html_tag_count, not_spammy_words, numwords, begin_with_re, ausgabe
+from cap_features import cap_word_ratio, amount_cap_words, spammy_words, html_tag_count, not_spammy_words, numwords, begin_with_re
 
 def main():
     
