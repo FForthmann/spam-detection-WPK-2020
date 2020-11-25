@@ -142,3 +142,15 @@ def num_link(emailtext):
     solution = emailtext.count('http')
     return_dict = {'values': [solution], 'heads': ['@Attribute num_link REAL']}
     return return_dict
+
+
+def has_gifs(emailtext):
+    solution = 1 if ".gif" in emailtext.lower() else 0
+    return_dict = {'values': [solution], 'heads': ['@Attribute has_gifs REAL']}
+    return return_dict
+
+
+def has_jpg(emailtext):
+    solution = 1 if ".jpg" in emailtext.lower() else 0
+    return_dict = {'values': [solution], 'heads': ['@Attribute has_jpgs REAL']}
+    return return_dict
