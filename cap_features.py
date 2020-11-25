@@ -52,44 +52,50 @@ def spammy_words(inputtext):
 
     return_dict = {'values': [total], 'heads': ['@Attribute spammy_words REAL']}
     return return_dict
-   
+
+
 def html_tag_count(inputtext):
-	splittext = inputtext.split(" ")
-	tagcount = 0
-	for word in splittext:
-		if (len(word) > 0):
-			for char in word:
-				if (char=='<' or char=='>'):
-					tagcount += 1		
-	#print(tagcount)			
-	return_dict = {'values': [tagcount], 'heads': ['@Attribute html_tag_counts REAL']}
-	return return_dict
+    splittext = inputtext.split(" ")
+    tagcount = 0
+    for word in splittext:
+        if (len(word) > 0):
+            for char in word:
+                if (char == '<' or char == '>'):
+                    tagcount += 1
+    # print(tagcount)
+    return_dict = {'values': [tagcount], 'heads': ['@Attribute html_tag_counts REAL']}
+    return return_dict
+
 
 def not_spammy_words(emailtext):
-	spam_words = ['email', 'people', 'time', 'please']
-	splittext = emailtext.split(" ")
-	total = 0
-	for word in spam_words:
-		total += splittext.count(word)
+    spam_words = ['email', 'people', 'time', 'please']
+    splittext = emailtext.split(" ")
+    total = 0
+    for word in spam_words:
+        total += splittext.count(word)
 
-	return_dict = {'values': [total], 'heads': ['@Attribute not_spammy_words REAL']}
-	#print(total)
-	return return_dict
+    return_dict = {'values': [total], 'heads': ['@Attribute not_spammy_words REAL']}
+    # print(total)
+    return return_dict
+
 
 def numwords(emailtext):
     splittext = emailtext.split(" ")
     return_dict = {'values': [len(splittext)], 'heads': ['@Attribute numwords REAL']}
     return return_dict
+
+
 def ausgabe(emailtext):
     splittext = emailtext.split(" ")
     print(splittext)
     return_dict = {'values': [len(splittext)], 'heads': ['@Attribute ausgabe REAL']}
-    return return_dict 
+    return return_dict
+
 
 def begin_with_re(emailtext):
     splittext = emailtext.split(" ")
-    total = False 
+    total = False
     if ("re" in splittext[0].lower()):
-    	total = True
+        total = True
     return_dict = {'values': [total], 'heads': ['@Attribute begin_with_re REAL']}
     return return_dict
