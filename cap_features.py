@@ -49,7 +49,8 @@ def spammy_words(inputtext):
 
     return_dict = {'values': [total_spammy_words], 'heads': ['@Attribute spammy_words REAL']}
     return return_dict
-   
+
+
 def spammy_phrases(inputtext):
     with open('spammy_words_list_internet.csv', newline='') as f:
         reader = csv.reader(f)
@@ -60,12 +61,12 @@ def spammy_phrases(inputtext):
 
     total = 0
     for word in spam_words:
-    	word2 = word.lower()
-    	
-    	if(word2 in inputtext):
-    		total += 1
+        word2 = word.lower()
 
-    total_spammy_words = total 
+        if (word2 in inputtext):
+            total += 1
+
+    total_spammy_words = total
 
     return_dict = {'values': [total_spammy_words], 'heads': ['@Attribute spammy_phrases REAL']}
     return return_dict
@@ -106,4 +107,38 @@ def begin_with_re(emailtext):
     if ("re" in splittext[0].lower()):
         total = 0
     return_dict = {'values': [total], 'heads': ['@Attribute begin_with_re REAL']}
+    return return_dict
+
+
+def square_bracket_count(inputtext):
+    splittext = inputtext.split(" ")
+    tagcount = 0
+    for word in splittext:
+        if (len(word) > 0):
+            for char in word:
+                if (char == '[' or char == ']'):
+                    tagcount += 1
+    return_dict = {'values': [tagcount], 'heads': ['@Attribute square_bracket_tag_counts REAL']}
+    return return_dict
+
+
+def has_exclamation_mark(emailtext):
+    splittext = emailtext.split(" ")
+    total = 0
+    for word in splittext:
+        if ("!" in word):
+            total += 1
+    return_dict = {'values': [total], 'heads': ['@Attribute has_exclamation_mark REAL']}
+    return return_dict
+
+
+def has_html(emailtext):
+    solution = 1 if "html" in emailtext.lower() else 0
+    return_dict = {'values': [solution], 'heads': ['@Attribute has_html REAL']}
+    return return_dict
+
+
+def num_link(emailtext):
+    solution = emailtext.count('http')
+    return_dict = {'values': [solution], 'heads': ['@Attribute num_link REAL']}
     return return_dict
