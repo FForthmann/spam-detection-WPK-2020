@@ -49,6 +49,26 @@ def spammy_words(inputtext):
 
     return_dict = {'values': [total_spammy_words], 'heads': ['@Attribute spammy_words REAL']}
     return return_dict
+   
+def spammy_phrases(inputtext):
+    with open('spammy_words_list_internet.csv', newline='') as f:
+        reader = csv.reader(f)
+        spam_words = list(reader)
+
+    spam_words = np.array(spam_words)
+    spam_words = spam_words.flatten()
+
+    total = 0
+    for word in spam_words:
+    	word2 = word.lower()
+    	
+    	if(word2 in inputtext):
+    		total += 1
+
+    total_spammy_words = total 
+
+    return_dict = {'values': [total_spammy_words], 'heads': ['@Attribute spammy_phrases REAL']}
+    return return_dict
 
 
 def html_tag_count(inputtext):
