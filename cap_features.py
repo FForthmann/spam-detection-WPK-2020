@@ -1,9 +1,6 @@
 import csv
 
 import numpy as np
-from _operator import contains
-from ntpath import split
-from pip._vendor.packaging.tags import Tag
 
 
 def amount_cap_words(inputtext):
@@ -36,7 +33,7 @@ def cap_word_ratio(inputtext):
 
 
 def spammy_words(inputtext):
-    with open('spammy_words_list_general.csv', newline='') as f:
+    with open('spammy_words_list.csv', newline='') as f:
         reader = csv.reader(f)
         spam_words = list(reader)
 
@@ -48,9 +45,9 @@ def spammy_words(inputtext):
     for word in spam_words:
         total += splittext.count(word)
 
-    total_spammy_words = float(total)
+    total_spammy_words = total / len(splittext)
 
-    return_dict = {'values': [total], 'heads': ['@Attribute spammy_words REAL']}
+    return_dict = {'values': [total_spammy_words], 'heads': ['@Attribute spammy_words REAL']}
     return return_dict
 
 
@@ -82,10 +79,11 @@ def numwords(emailtext):
     return_dict = {'values': [len(splittext)], 'heads': ['@Attribute numwords REAL']}
     return return_dict
 
+
 def begin_with_re(emailtext):
     splittext = emailtext.split(" ")
     total = 1
     if ("re" in splittext[0].lower()):
-     	total = 0
+        total = 0
     return_dict = {'values': [total], 'heads': ['@Attribute begin_with_re REAL']}
     return return_dict
