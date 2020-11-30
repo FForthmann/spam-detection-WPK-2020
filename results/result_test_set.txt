@@ -1,0 +1,56 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.KStar -B 20 -M a
+Relation:     target
+Instances:    902
+Attributes:   10
+              cap_word_ratio
+              amount_cap_words
+              html_tag_counts
+              begin_with_re
+              has_exclamation_mark
+              square_bracket_tag_counts
+              has_html
+              num_link
+              grossbuchstaben
+              TARGET
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+KStar Beta Verion (0.1b).
+Copyright (c) 1995-97 by Len Trigg (trigg@cs.waikato.ac.nz).
+Java port to Weka by Abdelaziz Mahoui (am14@cs.waikato.ac.nz).
+
+KStar options : -B 20 -M a 
+
+Time taken to build model: 0.01 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.43 seconds
+
+=== Summary ===
+
+Correctly Classified Instances          91               91      %
+Incorrectly Classified Instances         9                9      %
+Kappa statistic                          0.8147
+Mean absolute error                      0.1   
+Root mean squared error                  0.2441
+Relative absolute error                 19.9491 %
+Root relative squared error             48.6763 %
+Total Number of Instances              100     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,881    0,069    0,902      0,881    0,892      0,815    0,980     0,977     0
+                 0,931    0,119    0,915      0,931    0,923      0,815    0,980     0,986     1
+Weighted Avg.    0,910    0,098    0,910      0,910    0,910      0,815    0,980     0,982     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 37  5 |  a = 0
+  4 54 |  b = 1
+
