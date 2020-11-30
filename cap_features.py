@@ -168,6 +168,8 @@ def grossbuchstaben(inputtext):
                     tagcount += 1
     return_dict = {'values': [tagcount], 'heads': ['@Attribute grossbuchstaben REAL']}
     return return_dict
+
+
 def words_containing_numbers_ratio(inputtext):
     splittext = inputtext.split(" ")
     total = 0
@@ -177,23 +179,25 @@ def words_containing_numbers_ratio(inputtext):
     amount_words = float(len(splittext))
     return_dict = {'values': [total / amount_words], 'heads': ['@Attribute words_containing_numbers_ratio REAL']}
     return return_dict
+
+
 def day_of_week(inputtext):
- splittext = inputtext.split(" ")
- day = 0
- for word in splittext:
-  if(word == "Mon"):
-   day = 1
-  elif(word == "Tue"):
-   day = 2
-  elif (word == "Wed"):
-   day = 3
-  elif (word == "Thu"):
-   day = 4
-  elif (word == "Fri"):
-   day = 5
-  elif (word == "Sat"):
-   day = 6
-  elif (word == "Sun"):
-   day = 7
- return_dict = {'values' : [day], 'heads' : ['@Attribute day_of_week REAL']}
- return return_dict
+    splittext = inputtext.split(" ")
+    day = 0
+    for word in splittext:
+        if (word == "Mon"):
+            day = 1
+        elif (word == "Tue"):
+            day = 2
+        elif (word == "Wed"):
+            day = 3
+        elif (word == "Thu"):
+            day = 4
+        elif (word == "Fri"):
+            day = 5
+        elif (word == "Sat"):
+            day = 6
+        elif (word == "Sun"):
+            day = 7
+    return_dict = {'values': [day], 'heads': ['@Attribute day_of_week REAL']}
+    return return_dict

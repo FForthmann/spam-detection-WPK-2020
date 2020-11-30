@@ -33,15 +33,14 @@ def main():
     feature_functions.append(has_html)
     feature_functions.append(num_link)
     feature_functions.append(grossbuchstaben)
-    #feature_functions.append(spammy_words)    
-    #feature_functions.append(not_spammy_words)
-    #feature_functions.append(numwords)
-    #feature_functions.append(spammy_phrases)
-    #feature_functions.append(has_gifs)
-    #feature_functions.append(has_jpg)
-    #feature_functions.append(words_containing_numbers_ratio)
-    #feature_functions.append(day_of_week)
-    
+    # feature_functions.append(spammy_words)
+    # feature_functions.append(not_spammy_words)
+    # feature_functions.append(numwords)
+    # feature_functions.append(spammy_phrases)
+    # feature_functions.append(has_gifs)
+    # feature_functions.append(has_jpg)
+    # feature_functions.append(words_containing_numbers_ratio)
+    # feature_functions.append(day_of_week)
 
     csv_reader = csv.reader(open(data_file_path, encoding='utf-8'), delimiter=data_file_delimiter)
     data_lines = [line for line in csv_reader]
