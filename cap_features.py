@@ -19,9 +19,8 @@ def amount_cap_words(inputtext):
 def cap_word_ratio(inputtext):
     splittext = inputtext.split(" ")
     total = 0
-    first = ""
     for word in splittext:
-        if (len(word) > 0):
+        if len(word) > 0:
             first = word[0]
             if first.isupper():
                 total += 1
@@ -65,7 +64,7 @@ def spammy_phrases(inputtext):
     for word in spam_words:
         word = word.lower()
 
-        if (word in inputtext):
+        if word in inputtext:
             total += 1
 
     total_spammy_words = total
@@ -78,11 +77,11 @@ def html_tag_count(inputtext):
     splittext = inputtext.split(" ")
     tagcount = 0
     for word in splittext:
-        if (len(word) > 0):
+        if len(word) > 0:
             for char in word:
-                if (char == '<' or char == '>'):
+                if char == '<' or char == '>':
                     tagcount += 1
-    return_dict = {'values': [tagcount], 'heads': ['@Attribute html_tag_counts REAL']}
+    return_dict = {'values': [tagcount], 'heads': ['@Attribute html_tag_count REAL']}
     return return_dict
 
 
@@ -106,7 +105,7 @@ def numwords(emailtext):
 def begin_with_re(emailtext):
     splittext = emailtext.split(" ")
     total = 1
-    if ("re" in splittext[0].lower()):
+    if "re" in splittext[0].lower():
         total = 0
     return_dict = {'values': [total], 'heads': ['@Attribute begin_with_re REAL']}
     return return_dict
@@ -116,21 +115,21 @@ def square_bracket_count(inputtext):
     splittext = inputtext.split(" ")
     tagcount = 0
     for word in splittext:
-        if (len(word) > 0):
+        if len(word) > 0:
             for char in word:
-                if (char == '[' or char == ']'):
+                if char == '[' or char == ']':
                     tagcount += 1
     return_dict = {'values': [tagcount], 'heads': ['@Attribute square_bracket_tag_counts REAL']}
     return return_dict
 
 
-def has_exclamation_mark(emailtext):
+def count_exclamation_marks(emailtext):
     splittext = emailtext.split(" ")
     total = 0
     for word in splittext:
-        if ("!" in word):
+        if "!" in word:
             total += 1
-    return_dict = {'values': [total], 'heads': ['@Attribute has_exclamation_mark REAL']}
+    return_dict = {'values': [total], 'heads': ['@Attribute count_exclamation_marks REAL']}
     return return_dict
 
 
@@ -158,15 +157,15 @@ def has_jpg(emailtext):
     return return_dict
 
 
-def grossbuchstaben(inputtext):
+def amount_capitalized_letters(inputtext):
     splittext = inputtext.split(" ")
     tagcount = 0
     for word in splittext:
-        if (len(word) > 0):
+        if len(word) > 0:
             for char in word:
-                if (char.isupper()):
+                if char.isupper():
                     tagcount += 1
-    return_dict = {'values': [tagcount], 'heads': ['@Attribute grossbuchstaben REAL']}
+    return_dict = {'values': [tagcount], 'heads': ['@Attribute amount_capitalized_letters REAL']}
     return return_dict
 
 
@@ -185,19 +184,19 @@ def day_of_week(inputtext):
     splittext = inputtext.split(" ")
     day = 0
     for word in splittext:
-        if (word == "Mon"):
+        if "Mon" == word:
             day = 1
-        elif (word == "Tue"):
+        elif "Tue" == word:
             day = 2
-        elif (word == "Wed"):
+        elif "Wed" == word:
             day = 3
-        elif (word == "Thu"):
+        elif "Thu" == word:
             day = 4
-        elif (word == "Fri"):
+        elif "Fri" == word:
             day = 5
-        elif (word == "Sat"):
+        elif "Sat" == word:
             day = 6
-        elif (word == "Sun"):
+        elif "Sun" == word:
             day = 7
     return_dict = {'values': [day], 'heads': ['@Attribute day_of_week REAL']}
     return return_dict
