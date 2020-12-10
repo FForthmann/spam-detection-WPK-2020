@@ -24,15 +24,15 @@ def main():
 
     feature_functions = []
 
-    feature_functions.append(cap_word_ratio)
-    feature_functions.append(amount_cap_words)
-    feature_functions.append(html_tag_count)
-    feature_functions.append(begin_with_re)
-    feature_functions.append(count_exclamation_marks)
+    # feature_functions.append(cap_word_ratio)
+   # feature_functions.append(amount_cap_words)
+    # feature_functions.append(html_tag_count)
+    # feature_functions.append(begin_with_re)
+    # feature_functions.append(count_exclamation_marks)
     feature_functions.append(square_bracket_count)
-    feature_functions.append(has_html)
-    feature_functions.append(num_link)
-    feature_functions.append(amount_capitalized_letters)
+    # feature_functions.append(has_html)
+   #feature_functions.append(num_link)
+   # feature_functions.append(amount_capitalized_letters)
     # feature_functions.append(spammy_words)
     # feature_functions.append(not_spammy_words)
     # feature_functions.append(numwords)
